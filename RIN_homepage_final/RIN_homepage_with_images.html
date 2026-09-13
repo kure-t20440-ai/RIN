@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="RIN — 無機質なものに、生命を。金属と植物、異なるものの出会いから生まれる一点ものの作品。">
+<meta name="theme-color" content="#0b0b0a">
+<title>RIN — 無機質なものに、生命を。</title>
+<style>
+:root{
+  --bg:#0b0b0a; --ink:#f2eee5; --muted:#aaa59b; --line:rgba(242,238,229,.18);
+  --paper:#e9e4d9; --paperInk:#171614; --accent:#b8a78d; --max:1400px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;line-height:1.9;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:#b8a78d;color:#111}
+.container{width:min(calc(100% - 64px),var(--max));margin:auto}
+.nav{position:fixed;z-index:20;top:0;left:0;right:0;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff;pointer-events:none}
+.nav a,.nav span{pointer-events:auto}
+.logo{font-family:Georgia,"Times New Roman",serif;letter-spacing:.42em;font-size:18px}
+.navlinks{display:flex;gap:30px;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.hero{min-height:100svh;display:grid;grid-template-columns:42% 58%;background:#10100f}
+.hero-copy{display:flex;align-items:center;padding:120px 7vw 90px;position:relative;z-index:2}
+.eyebrow{font-size:10px;letter-spacing:.4em;color:var(--muted);margin-bottom:28px}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(64px,10vw,145px);letter-spacing:.25em;line-height:.9;margin:0 0 30px}
+.hero-tag{font-size:clamp(21px,2.3vw,31px);letter-spacing:.15em;margin-bottom:32px}
+.hero-lead{max-width:500px;color:#c7c2b8;font-size:14px}
+.hero-meta{margin-top:60px;display:flex;gap:35px;color:#77736c;font-size:9px;letter-spacing:.2em}
+.hero-image{min-height:100svh;overflow:hidden;position:relative}
+.hero-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,10,.32),transparent 35%),linear-gradient(0deg,rgba(0,0,0,.18),transparent 45%)}
+.section{padding:130px 0}
+.section-head{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:start;margin-bottom:60px}
+.kicker{font-size:10px;letter-spacing:.34em;color:var(--muted);padding-top:12px}
+h2{font-size:clamp(34px,5vw,70px);font-weight:400;letter-spacing:.07em;line-height:1.35;margin:0}
+.copy{max-width:760px;color:#c9c4ba;font-size:15px}
+.paper{background:var(--paper);color:var(--paperInk)}
+.paper .kicker{color:#777168}.paper .copy{color:#4e4a43}
+.manifesto{padding:145px 0;text-align:center}
+.manifesto h2{font-size:clamp(32px,4.4vw,62px)}
+.manifesto .copy{margin:30px auto 0;max-width:700px}
+.meanings{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #8f887e;border-left:1px solid #8f887e;margin-top:70px;text-align:left}
+.meaning{min-height:210px;padding:28px 25px;border-right:1px solid #8f887e;border-bottom:1px solid #8f887e}
+.meaning .kanji{font-size:38px;line-height:1;margin-bottom:16px}
+.meaning .romaji{font-family:Georgia,serif;letter-spacing:.35em;font-size:11px;color:#7d766c}
+.meaning p{font-size:13px;line-height:1.9;margin:18px 0 0;color:#4d4942}
+.chapters{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.chapter{position:relative;overflow:hidden;background:#151513;aspect-ratio:3/4}
+.chapter img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1),filter .7s}
+.chapter:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.62));opacity:.75}
+.chapter:hover img{transform:scale(1.045);filter:saturate(.9)}
+.chapter-label{position:absolute;left:22px;bottom:18px;z-index:2;font-size:10px;letter-spacing:.24em;color:#fff}
+.chapter-label b{display:block;font-size:28px;font-weight:400;letter-spacing:.08em;margin-bottom:2px}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.detail-photo{aspect-ratio:1/1;overflow:hidden;background:#111}
+.detail-photo img{width:100%;height:100%;object-fit:cover}
+.specs{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:35px}
+.spec{padding:17px 0;border-bottom:1px solid var(--line);font-size:11px;color:#b4afa6;letter-spacing:.1em}
+.spec strong{display:block;color:#eee9df;font-weight:400;margin-bottom:4px}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:70px}
+.process article{background:var(--bg);padding:35px;min-height:220px}
+.process-no{font-family:Georgia,serif;color:#77736b;font-size:12px;letter-spacing:.2em}
+.process h3{font-size:22px;font-weight:400;margin:22px 0 12px}
+.process p{font-size:13px;color:#aaa59c;margin:0}
+.gallery-original{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:12px;margin-top:55px}
+.gallery-original div{overflow:hidden;min-height:360px}
+.gallery-original img{width:100%;height:100%;object-fit:cover}
+.contact{border-top:1px solid var(--line);text-align:center;padding:120px 20px}
+.contact h2{font-size:clamp(35px,5vw,68px)}
+.contact p{color:#aaa59d;max-width:600px;margin:25px auto 40px;font-size:14px}
+.contact-button{display:inline-flex;border:1px solid #77736b;padding:15px 35px;font-size:11px;letter-spacing:.28em;transition:.3s}
+.contact-button:hover{background:#eee9df;color:#111;border-color:#eee9df}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#77736c;font-size:9px;letter-spacing:.2em;display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .9s ease,transform .9s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){
+ .nav{padding:18px 20px}.navlinks{gap:14px;font-size:9px}.container{width:min(calc(100% - 40px),var(--max))}
+ .hero{grid-template-columns:1fr}.hero-copy{min-height:65svh;padding:110px 10vw 65px}.hero-image{min-height:55svh}.hero-image img{object-position:center 40%}
+ .section{padding:90px 0}.section-head{grid-template-columns:1fr;gap:12px;margin-bottom:38px}.meanings{grid-template-columns:repeat(2,1fr);margin-top:45px}.chapters{grid-template-columns:repeat(2,1fr)}
+ .detail{grid-template-columns:1fr;gap:45px}.process{grid-template-columns:1fr}.gallery-original{grid-template-columns:1fr 1fr}.gallery-original div:first-child{grid-column:span 2}
+}
+@media(max-width:520px){.navlinks a:nth-child(n+3){display:none}.hero-copy{padding-left:8vw;padding-right:8vw}.hero-meta{margin-top:40px}.meanings{grid-template-columns:1fr}.chapters{grid-template-columns:1fr 1fr;gap:7px}.chapter-label{left:13px;bottom:12px}.chapter-label b{font-size:22px}.gallery-original{display:block}.gallery-original div{min-height:320px;margin-bottom:8px}footer{display:block;line-height:2.4}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="logo" href="#top">RIN</a>
+  <div class="navlinks"><a href="#concept">CONCEPT</a><a href="#eight">RIN</a><a href="#work">WORK</a><a href="#contact">CONTACT</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-copy">
+    <div>
+      <div class="eyebrow">MATERIAL × GREEN / ONE OF ONE</div>
+      <h1>RIN</h1>
+      <div class="hero-tag">無機質なものに、生命を。</div>
+      <p class="hero-lead">ステンレスという硬質な素材に、植物という生命を添える。<br>異なるものが出会うことで生まれる、美しさを暮らしの中へ。</p>
+      <div class="hero-meta"><span>HANDMADE</span><span>STAINLESS</span><span>MADE IN JAPAN</span></div>
+    </div>
+  </div>
+  <div class="hero-image"><img src="images/hero-detail.jpg" alt="RIN 金属花器と植物の静物" fetchpriority="high"></div>
+</header>
+
+<main>
+<section class="section paper manifesto" id="concept">
+  <div class="container reveal">
+    <div class="kicker">01 — CONCEPT</div>
+    <h2>異なるものが、<br>ひとつの佇まいになる。</h2>
+    <p class="copy">金属の硬さ。植物のしなやかさ。<br>相反するように見える二つの素材を、ひとつの器に収める。<br>RINは、工業素材に残る熱や酸化、研磨の痕跡を「傷」ではなく、作品の個性として受け入れます。</p>
+  </div>
+</section>
+
+<section class="section" id="eight">
+  <div class="container">
+    <div class="section-head reveal"><div class="kicker">02 — EIGHT MEANINGS</div><div><h2>「リン」と読む、<br>八つの意味。</h2><p class="copy">RINという名前には、ひとつの答えではなく、八つの意味を重ねています。素材、光、植物、人の手。そのすべてが重なって、一つの作品になる。</p></div></div>
+    <div class="meanings reveal">
+      <article class="meaning"><div class="kanji">凛</div><div class="romaji">RIN</div><p>芯のある佇まい。静かな強さを、形にする。</p></article>
+      <article class="meaning"><div class="kanji">凜</div><div class="romaji">RIN</div><p>静かな強さ。飾らず、凛とした存在感。</p></article>
+      <article class="meaning"><div class="kanji">倫</div><div class="romaji">RIN</div><p>異なるものの共存。金属と植物が互いを引き立てる。</p></article>
+      <article class="meaning"><div class="kanji">鈴</div><div class="romaji">RIN</div><p>小さな存在感。暮らしに、さりげない余韻を残す。</p></article>
+      <article class="meaning"><div class="kanji">綸</div><div class="romaji">RIN</div><p>人の手と素材のつながり。工程の痕跡も作品の一部。</p></article>
+      <article class="meaning"><div class="kanji">燐</div><div class="romaji">RIN</div><p>光によって生まれる表情。時間とともに変化する美しさ。</p></article>
+      <article class="meaning"><div class="kanji">璘</div><div class="romaji">RIN</div><p>一つとして同じではない輝き。偶然を個性として残す。</p></article>
+      <article class="meaning"><div class="kanji">輪</div><div class="romaji">RIN</div><p>つながり、巡り、ひとつになる。人と自然と暮らしを結ぶ。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section paper" id="work">
+  <div class="container">
+    <div class="section-head reveal"><div class="kicker">03 — COLLECTION</div><div><h2>八つのRIN。<br>八つの表情。</h2><p class="copy">同じ素材でも、光の入り方、熱の入り方、植物の選び方で表情は変わる。ここではRINの世界を八つの章として見せます。</p></div></div>
+    <div class="chapters reveal">
+      <a class="chapter" href="#detail"><img src="images/01_rin.jpg" alt="RIN ブランドコンセプト"><span class="chapter-label"><b>RIN</b>01 — MATERIAL × GREEN</span></a>
+      <a class="chapter" href="#detail"><img src="images/02_rin.jpg" alt="凛 — RIN"><span class="chapter-label"><b>凛</b>RIN — 芯のある佇まい</span></a>
+      <a class="chapter" href="#detail"><img src="images/03_rin.jpg" alt="倫 — RIN"><span class="chapter-label"><b>倫</b>RIN — 異なるものの共存</span></a>
+      <a class="chapter" href="#detail"><img src="images/04_rin.jpg" alt="鈴 — RIN"><span class="chapter-label"><b>鈴</b>RIN — 小さな存在感</span></a>
+      <a class="chapter" href="#detail"><img src="images/05_rin.jpg" alt="綸 — RIN"><span class="chapter-label"><b>綸</b>RIN — 人の手と素材</span></a>
+      <a class="chapter" href="#detail"><img src="images/06_rin.jpg" alt="燐 — RIN"><span class="chapter-label"><b>燐</b>RIN — 光が生む表情</span></a>
+      <a class="chapter" href="#detail"><img src="images/07_rin.jpg" alt="璘 — RIN"><span class="chapter-label"><b>璘</b>RIN — 唯一無二の輝き</span></a>
+      <a class="chapter" href="#detail"><img src="images/08_rin.jpg" alt="輪 — RIN"><span class="chapter-label"><b>輪</b>RIN — つながり、巡る</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="detail">
+  <div class="container detail reveal">
+    <div class="detail-photo"><img src="images/material-detail.jpg" alt="RIN 金属花器の表情"></div>
+    <div>
+      <div class="kicker">04 — ONE OF ONE</div>
+      <h2>素材の偶然を、<br>作品にする。</h2>
+      <p class="copy">溶接の熱で生まれる色、研磨で現れる模様、光の角度で変わる金属の表情。工業素材の「痕跡」を一点ごとの個性として受け入れ、同じものを作ることではなく、その一つを美しく仕上げることを大切にしています。</p>
+      <div class="specs">
+        <div class="spec"><strong>MATERIAL</strong>STAINLESS / METAL</div>
+        <div class="spec"><strong>STYLE</strong>HANDMADE</div>
+        <div class="spec"><strong>CHARACTER</strong>ONE OF ONE</div>
+        <div class="spec"><strong>ORIGIN</strong>MADE IN JAPAN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="container">
+    <div class="section-head reveal"><div class="kicker">05 — PROCESS</div><div><h2>工業の現場から、<br>暮らしの中へ。</h2><p class="copy">RINは、素材をただ新しく見せるのではなく、素材が歩んできた時間まで含めて作品にします。</p></div></div>
+    <div class="process reveal">
+      <article><div class="process-no">01 / MATERIAL</div><h3>素材を選ぶ</h3><p>板厚、表面、残った熱の跡。素材そのものが持つ個性を見る。</p></article>
+      <article><div class="process-no">02 / FORM</div><h3>形をつくる</h3><p>切る、曲げる、溶接する。必要最小限の工程で、静かな形に整える。</p></article>
+      <article><div class="process-no">03 / FINISH</div><h3>表情を残す</h3><p>磨きすぎず、隠しすぎない。光と時間で変わる表情を仕上げる。</p></article>
+    </div>
+    <div class="gallery-original reveal">
+      <div><img src="images/original-vessel.jpg" alt="RIN 実作品"></div>
+      <div><img src="images/original-vessel-2.jpg" alt="RIN 実作品の別角度"></div>
+      <div><img src="images/original-vessel-3.jpg" alt="RIN 実作品と植物"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container reveal">
+    <div class="kicker">06 — CONTACT</div>
+    <h2>ひとつの作品との、<br>出会い。</h2>
+    <p>RINの作品は、それぞれ異なる表情を持つ一点もの。作品の詳細、販売、制作についてのお問い合わせを受け付けています。</p>
+    <a class="contact-button" href="https://jp.mercari.com/item/m68317468214" target="_blank" rel="noopener noreferrer">CONTACT RIN</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>R I N</span><span>Material × Green — Made in Japan</span>
+</footer>
+<script>
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
